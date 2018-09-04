@@ -16,23 +16,48 @@ function dictSort(arr) {
   // return arr
 
   /*----------- Bubble Sort --------------*/
-  let temp;
-  do {
-    swapped = false
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i-1] > arr[i]) {
-        temp = arr[i-1]
-        arr[i-1] = arr[i]
-        arr[i] = temp
-        swapped = true
-      }
-    }
-  } while (swapped);
+  // let temp;
+  // do {
+  //   swapped = false
+  //   for (let i = 1; i < arr.length; i++) {
+  //     if (arr[i-1] > arr[i]) {
+  //       temp = arr[i-1]
+  //       arr[i-1] = arr[i]
+  //       arr[i] = temp
+  //       swapped = true
+  //     }
+  //   }
+  // } while (swapped);
 
-  return arr
+  // return arr
+
+  /*----------- Quick Sort --------------*/
+  //base case
+  if (arr.length <= 1) { 
+		return arr;
+	} else {
+
+		var left = [];
+		var right = [];
+		var newArr = [];
+		var pivot = arr.pop();
+
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] <= pivot) {
+				left.push(arr[i]);
+			} else {
+				right.push(arr[i]);
+			}
+		}
+
+		return newArr.concat(dictSort(left), pivot, dictSort(right));
+	}
 }
+
 let arrOfWord1 = ['makan','duduk','tidur','terbang']
+//[ 'duduk', 'makan', 'terbang', 'tidur' ]
 let arrOfWord2 = ['anggi','angga','ani','adi']
+//[ 'adi', 'angga', 'anggi', 'ani' ]
 
 console.log(dictSort(arrOfWord1));
 console.log(dictSort(arrOfWord2));
