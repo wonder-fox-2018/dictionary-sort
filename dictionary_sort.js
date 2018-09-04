@@ -1,4 +1,29 @@
 const readline = require('readline');
-// your code here to initialize the program and take user input
 
-module.exports = Dictionary
+function DictionarySort(arr){
+    for (let i = 0; i < arr.length; i++) {
+        let tmp = arr[i]
+        for (let j = 0; j < arr.length; j++) {
+            if(arr[j]>=tmp){
+                tmp = arr[j]
+                arr[j] = arr[i]
+                arr[i] = tmp
+            }
+        }   
+    }
+    return arr
+}
+
+console.log(DictionarySort([
+    'makan','duduk','tidur','terbang'
+]))
+
+console.log(DictionarySort([
+    'anggi','angga','ani','adi'
+]))
+
+
+
+
+
+// module.exports = Dictionary
