@@ -1,6 +1,6 @@
 const readline = require('readline');
 // your code here to initialize the program and take user input
-function dictSort(arr) {
+function Dictionary(arr) {
   // let unsorted,j;
 
   // for (let i = 1; i <= arr.length; i++) {
@@ -50,7 +50,7 @@ function dictSort(arr) {
 			}
 		}
 
-		return newArr.concat(dictSort(left), pivot, dictSort(right));
+		return newArr.concat(Dictionary(left), pivot, Dictionary(right));
 	}
 }
 
@@ -59,7 +59,7 @@ let arrOfWord1 = ['makan','duduk','tidur','terbang']
 let arrOfWord2 = ['anggi','angga','ani','adi']
 //[ 'adi', 'angga', 'anggi', 'ani' ]
 
-console.log(dictSort(arrOfWord1));
-console.log(dictSort(arrOfWord2));
+console.log(Dictionary(arrOfWord1));
+console.log(Dictionary(arrOfWord2));
 
-// module.exports = Dictionary
+module.exports = Dictionary
